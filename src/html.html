@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Dados</title> <!-- Manrope font import -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet"> <!-- Montserrat font import -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style type='text/css'>
+        * {
+            font-family: 'Manrope', sans-serif;
+            margin: 0px;
+            padding: 0px;
+            color: #000000;
+            -webkit-print-color-adjust: exact;
+        }
+
+        p {
+            font-style: normal;
+        }
+
+        body {
+            background-color: #FFFFFF;
+        }
+
+        .main-container {
+            margin: auto;
+            position: relative;
+            width: 190mm;
+            height: 277mm;
+            display: block;
+            background: white;
+            page-break-after: auto;
+            padding: 50px;
+            box-sizing: border-box;
+        }
+
+        header {
+            box-sizing: border-box;
+            display: -webkit-box;
+            display: -webkit-flex;
+            -webkit-flex-wrap: wrap;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            -webkit-align-items: center;
+            margin-bottom: 40px;
+        }
+
+        header img {
+            max-width: 75px;
+            max-height: 24px;
+            object-fit: contain;
+        }
+
+        .header-information {
+            margin-left: 40px;
+        }
+
+        .header-information p {
+            font-weight: 800;
+            font-size: 8px;
+        }
+
+        .header-information span {
+            font-weight: 400;
+            font-size: 8px;
+        }
+
+        h1 {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 800;
+            font-size: 10px;
+            line-height: 12px;
+            color: #000000;
+            text-shadow: 0px 1.66458px 14.9812px rgba(218, 73, 70, 0.18);
+            margin-bottom: 20px;
+            margin-left: 20px;
+        }
+
+        .row {
+            display: -webkit-box;
+            display: flex;
+            width: 100%;
+        }
+
+        .col {
+            display: -webkit-box;
+            display: -webkit-flex;
+            -webkit-flex-wrap: wrap;
+            display: flex;
+            flex-wrap: wrap;
+            -webkit-flex-flow: column;
+            width: max-content;
+            width: 100%;
+            max-width: 50%;
+            min-width: 40%;
+        }
+
+        .item {
+            display: -webkit-box;
+            display: -webkit-flex;
+            -webkit-flex-wrap: wrap;
+            display: flex;
+            flex-direction: row;
+            max-width: 100%;
+            -webkit-justify-content: space-between;
+            justify-content: space-between;
+            padding: 4px 24px;
+            border-radius: 10px;
+        }
+
+        .col:nth-child(1) .item:nth-child(odd) {
+            background-color: #F3F3F3;
+        }
+
+        .col:nth-child(3) .item:nth-child(even) {
+            background-color: #F3F3F3;
+        }
+
+        .item p {
+            font-family: 'Manrope';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 8px;
+            line-height: 12px;
+            color: #000000;
+            max-width: 50%;
+        }
+
+        .item p.label {
+            font-family: 'Manrope';
+            font-style: normal;
+            font-weight: 800;
+            font-size: 8px;
+            line-height: 12px;
+            color: #000000;
+            max-width: 50%;
+        }
+
+        .col-spacing {
+            width: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <header> <img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAAAYCAYAAACyVACzAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAVISURBVHgB7VhLcts4EG1AVKZSVpXpnSqWMshudpFPEB3BPoHlE9g+gZ0TOD6B5RM4OYHl5ezk3ezMiSRHVbPhVOQpZUiR000AIkQJ/KRmFedVUQRBoPuh2Y1uiAFCCOGGYdiBDBzH8QhQAihDoAxhe19GFvEIgmCfsfhXeuaceZzX70rMy9VNmM1mQx+R7d/d3e0wxtxNY0y5xN+hRhSFh0jwQ1bQYhFAu73b//r16XSToszYY8bgxPY+DL/Ru0vb+3a73UMeF5wDEmdJXxwTt8DDBR1MJpNhju4z1N2DfOxs6kR9F6ipS+2trfoernKpB3XfolxB7fl8/oZLUrGw64Beo7F1A8Xo5L2MIubZ3tEXxBFXyMPNvkODCVzQrYsAOwTkw7d9bPSqj2nbeafbrVarS7oVi/50OpWehcOwM1bDIvQwjgsnAzIhhUCXJo/H4wGUAC76PNsXRdG9bTx5RjoXBnG86HPOu6i5p7rdnZ2X23kLRp2eelRz6JkNVJ81KqII7hnTcngnlQnHKaeoT3dlrPSLjkZfTnUbQ/AWb121pLf4M7ApRcIdJEyGGo7Hj++hEigMEsb+bPZ0oIxyjfrpflI0+/Pn8aXBuaeaw9FoclQ0F/eiIYa/L71ahiN5On7A/YRZsp7pHbWTMEQruvqFKQitfp0+sbwwAB1CKMuDymBCSVkJF5TpVxCCi2yK9GnpabnA3OGn62aCwn3V09lyL+erZJmVHE7y4H8kmZHuKf2u3L+WOj9hSHbpenj48meRlDB0zLlVDL10kkaj0aFtR/PCxLJ0GIfSNVpSecXql5QpnBUpSkjiWDWHdzEUrozXPobDab6EZG/p4UVcHigDY1gPOXc+eZ49C65JSUoAySPv42ZBHwX5J+HOeXyhN3ZMSufmOPIsYUzz7ALtIaHrFDkuyYq99Ir3oQBBsHif0d1DfR+U4S6gJHR9JtsLr+w82rd0W/GnlrdYLO7McRyLLnOh3qpyJpYDeeSXIZlFmS9MaXk0enyDe+QRcsh60kmr9eoMSsAsgTB0/4aSoH0LQy+rd0C8zA6HFOjUuV4LmW5tV45lgcuUkCj6d28y+at06JjA/aGPt36z2RQvXtRu9FdG0Z1yEpjQfJ+eAg8qgEoWMGrFIIjWMjo3vWLde9KSIs8AZn1S1VDtdutju/3qodVKypQE9EUXCzhKF5KfiTfxLTpxZEH1liGnn/UqgmPuN/V66lmq1ugmUzMlRQ7JSgTV3G3yCF2+pFzqyXGLkE08ObKETEjfk5ENKZb1OqbrxvEvTB8e8Vy0zGhIdgAlSFIVbaZ+jZKHcRdPCed4SjinB9xcD5fS1/cxC5iQ48tnQo1ajW1TUU2wHc0c03Up+yQqmTzEKqpeEMSXUIIkVfFahgms83bsYUH1kC474rPXr1vJMQOPGEteYRhdQwFUCaTlVPZwc9+1JTMuvcIKH618sCl+TZJQgLz9IwjCUyRpVu2ueaCmc2aefpNK2qwehmbmn83mG8+xFIYe3r3sCyQ5mM3+uSzeKOe4sNoAvhNkCMx+e7hfHqcHeBlK6N39yeSx0KsMDOgnivg9VIcv5zO/anL4iQ0oPsv8WKD/5chrBF4HIOsqKng9kF5JteShek9J5Ui1ad4ePDPoDE8GovqSksm7zJiu6jfnJH9+cnhe6OKlz5r0L4YA+X+ZefCn/+10qSLUnZ5LFsY/BnTIEW4ydxNkTG2YK0g9q/OcPEuA3K/IaJ7qc1W/2DBO32nfooz8tgbPB028flN3KrLnIA1CxiOj6XLjG15/qL7fQRpsitfL/wBd58dKBaH+wAAAAABJRU5ErkJggg=="
+                alt="Logotipo">
+            <div class="header-information">
+                <p thjs:text="${nomeCompleto} ? ${nomeCompleto} : '-'">-</p>
+                <p>CPF: <span thjs:text="${cpf} ? ${cpf} : '-'">-</span></p>
+            </div>
+        </header>
+        <div class="content-container">
+            <h1>Meus Dados Pessoais</h1>
+            <div class="row">
+                <div class="col">
+                    <div class="item">
+                        <p class="label">Data de Nascimento</p>
+                        <p thjs:text="${dataNascimento} ? ${dataNascimento} : '-'">-</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">CNH</p>
+                        <p thjs:text="${documentoIdentificacao.tipo} == 'CNH'?  ${documentoIdentificacao.numero} : '-'">
+                            -</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">RG</p>
+                        <p thjs:text="${documentoIdentificacao.tipo} == 'RG'?  ${documentoIdentificacao.numero} : '-'">-
+                        </p>
+                    </div>
+                    <div class="item">
+                        <p class="label">Telefone</p>
+                        <p
+                            thjs:text="'+' + ${telefone.codigoDdi} + ' (' + ${telefone.codigoArea} + ') ' + ${telefone.numero}">
+                            -</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">E-mail</p>
+                        <p thjs:text="${email} ? ${email} : '-'">-</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">Endereço</p>
+                        <p style="text-align: right"> <span style="text-align: right"
+                                thjs:text="${endereco.logradouro} + ', ' + ${endereco.numero} + ', ' +    ${endereco.complemento}">-</span><br />
+                            <span style="text-align: right" thjs:text="${endereco.bairro}">-</span><br /> <span
+                                style="text-align: right"
+                                thjs:text="${endereco.cep} ? 'CEP ' + ${endereco.cep} : ''">-</span><br /> <span
+                                style="text-align: right"
+                                thjs:text="${endereco.cidade.nome} + ' - ' + ${endereco.uf.sigla}">-</span><br /> </p>
+                    </div>
+                    <div class="item">
+                        <p class="label">Estado Civil</p>
+                        <p thjs:text="${estadoCivil.descricao} ? ${estadoCivil.descricao} : '-'">-</p>
+                    </div>
+                </div>
+                <div class="col-spacing"></div>
+                <div class="col">
+                    <div class="item">
+                        <p class="label">Nome Filiação 1</p>
+                        <p thjs:text="${nomePai}? ${nomePai} : '-'">-</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">Nome Filiação 2</p>
+                        <p thjs:text="${nomeMae}? ${nomeMae} : '-'">-</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">Nome cônjuge</p>
+                        <p thjs:text="${nomeConjuge}? ${nomeConjuge} : '-'">-</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">Renda declarada</p>
+                        <p thjs:text="${rendaDeclarada} ? ${rendaDeclarada} : '-'">-</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">Ocupação</p>
+                        <p thjs:text="${ocupacao.nome} ? ${ocupacao.nome} : '-'">-</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">Nacionalidade</p>
+                        <p thjs:text="${localNascimento.pais} ? ${localNascimento.pais} : '-'">-</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">US person</p>
+                        <p thjs:text="${usPerson}? 'Sim' : 'Não'">-</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">PEP</p>
+                        <p thjs:text="${pep}? 'Sim' : 'Não'">-</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,12 +1,19 @@
 *{
   margin:0;
-  padding:0
+  padding:0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+input, textarea {
+  font-family: Consolas, monaco, monospace;
+}
+
 .container{
   display:flex;
   flex-direction: column;
   padding:20px;
   height:100vh;
+  box-sizing: border-box;
   background-color: #282c34;
   text-align: center;
 }
@@ -21,13 +28,36 @@
 }
 
 .btn{
-padding:20px 30px;
-border-radius: 10px;
+  background: white;
+  border-color: white;
+  border: 2px solid black;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: black;
+  transition-duration: 0.25s;
+  cursor: pointer;
+  padding: 12px 24px;
+  margin: 8px;
+  border-radius: 10px;
+}
+
+.btn:hover {
+  background: black;
+  border-color: black;
+  color: white;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .field textarea{
   width: 80%;
-  height: 80%;
+  height: 95%;
 }
 
 @media (prefers-reduced-motion: no-preference) {

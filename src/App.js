@@ -7,20 +7,34 @@ function App() {
   const [output,setOutput] = useState("")
 
   const processarHtml = (html) => {
-    if (html === "") {
+      if (html === "") {
+          return "";
+      }
+
+      let result = `${html}`
+      // result = result.replace(/\s/g, '');
+      // REMOVE TABS
+      result = result.replace(/\t/g, '');
+      // REMOVE QUEBRA DE LINHA
+      result = result.replace(/(\r\n|\n|\r)/gm, '');
+      result = result.replaceAll('"', '\\"');
+      result = result.replaceAll('/', '\\/');
+      setOutput(`"${result}"`)
+  }
+
+  const processarString = (string) => {
+    if (string === "") {
         return "";
     }
 
-    let result = `${html}`
-    // result = result.replace(/\s/g, '');
-    // REMOVE TABS
-    result = result.replace(/\t/g, '');
-    // REMOVE QUEBRA DE LINHA
-    result = result.replace(/(\r\n|\n|\r)/gm, '');
-    result = result.replaceAll('"', '\\"');
-    result = result.replaceAll('/', '\\/');
-    setOutput(`"${result}"`)
-}
+    let result = `${string}`
+    result = result.replaceAll('\\"', '"');
+    result = result.replaceAll('\\/', '/');
+    result = result.slice(1, result.length - 1);    
+    setOutput(`${result}`)
+  } 
+
+
 
   return (
     <div className="container">
@@ -28,9 +42,9 @@ function App() {
       <div className="field">
         <textarea value={input} onChange={(e)=>setInput(e.target.value)}></textarea>
       </div>
-      <div>
-        
-        <button className="btn" onClick={()=>processarHtml(input)}>Processar</button>
+      <div className='btn-container'>
+        <p className="btn" onClick={()=>processarHtml(input)}>Converter html</p>
+        <p className="btn" onClick={()=>processarString(input)}>Converter string</p>
       </div>
       <div className="field">
         <textarea value={output} onChange={(e)=>setOutput(e.target.value)}></textarea>
